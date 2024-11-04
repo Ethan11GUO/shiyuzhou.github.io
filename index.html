@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jemdoc.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Shiyu Zhou (周诗羽)</title>
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 左侧固定栏和背景 */
+        #sidebar {
+            width: 30%;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+            /* 伪元素用于背景虚化和透明度 */
+            #sidebar::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('photo/background.webp') no-repeat center center;
+                background-size: cover;
+                filter: blur(3px); /* 调整虚化 */
+                opacity: 0.7; /* 调整透明度 */
+                z-index: -1;
+            }
+
+        #profile-pic {
+            width: auto;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        #sidebar h1 {
+            font-size: 2em;
+            margin-top: 0;
+            color: #fff;
+        }
+
+        /* 调整文字样式 */
+        #sidebar p, #sidebar a {
+            font-size: 1.1em; /* 增大字体 */
+            color: #f0f0f0; /* 更亮的灰色 */
+            line-height: 1.6; /* 增加行间距 */
+        }
+
+        #sidebar a {
+            color: #c0d6f3;
+            text-decoration: none;
+        }
+
+        /* 右侧内容区 */
+        #content {
+            margin-left: 30%;
+            width: 70%;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        /* 论文条目的样式 */
+        .publication-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+            .publication-item img {
+                width: 150px; /* 进一步增大缩略图宽度 */
+                height: auto;
+                margin-right: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+        .publication-text {
+            flex: 1;
+            font-size: 1.1em; /* 增大字体 */
+            line-height: 1.6; /* 增加行间距 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 左侧固定栏 -->
+    <div id="sidebar">
+        <h1>Shiyu Zhou (周诗羽)</h1>
+        <img id="profile-pic" src="photo/bio.jpg" alt="Shiyu Zhou">
+        <p>Assistant Student</p>
+        <p>Key Laboratory of Multifunctional Nanomaterials and Smart Systems,<br>Suzhou Institute of Nano-Tech and Nano-Bionics,<br>Chinese Academy of Sciences</p>
+        <p>No.398 Ruoshui Road, Soochow City, China</p>
+        <p>Email: <a href="mailto:syzhou2022@gmail.com">syzhou2022@gmail.com</a></p>
+    </div>
+
+    <!-- 右侧内容区 -->
+    <div id="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a master's student majoring in Materials and Chemical Engineering at the University of Science and Technology of China, expected to graduate in June 2024. Currently, I serve as a graduate research assistant at the Key Laboratory of Multifunctional Nanomaterials and Smart Systems at the Chinese Academy of Sciences, focusing on inkjet 3D printing processes. I have a background in 3D Printing, Printable Electronics, and Mechanical Design.</p>
+            <p>My research interests include functional microsystem 3D printing, wearable electronic products, and soft 3D micro-mechanics. I am dedicated to utilizing novel additive manufacturing processes for micro and nanostructures and am enthusiastic about designing, building, and observing new manufacturing processes.</p>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <ul>
+                <li>3D Printing of Functional Microsystems</li>
+                <li>New Fabrication Techniques for Micro and Nanostructures</li>
+                <li>Flexible Electronics</li>
+                <li>3D-printed Microoptics</li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Recent Publications</h2>
+            <div class="publication-item">
+                <img src="photo/admt202400016.jpg" alt="Publication 1">
+                <div class="publication-text">
+                    <p><b>S. Zhou</b>, H. Guo, B. Qian, L. Li, X. Shi. (2024) Single-Step Inkjet Printing PDMS Microlens Arrays for Tunable-Focus Artificial Compound Eyes. <i>Adv. Mater. Technol.</i>, 2400016. [<a href="publication/Single‐Step Inkjet Printing PDMS Microlens Arrays for Tunable‐Focus Artificial.pdf">PDF</a>][<a href="https://doi.org/10.1002/admt.202400016">Publisher</a>]</p>
+                </div>
+            </div>
+            <div class="publication-item">
+                <img src="photo/adem202300558.jpg" alt="Publication 2">
+                <div class="publication-text">
+                    <p>H. Guo, J. Qin, <b>S. Zhou</b>, B. Qian, L. Li, X. Shi. (2023) A low-binder-content ink system for 3D printing high-density and small feature size 316L stainless steel parts. <i>Adv. Eng. Mater.</i>. 25 (20), 2300558. [<a href="publication/manuscript.pdf">PDF</a>][<a href="https://doi.org/10.1002/adem.202300558">Publisher</a>]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Research Experience</h2>
+            <p>Graduate Research Assistant, Key Laboratory of Multifunctional Nanomaterials and Smart Systems, Suzhou Institute of Nano-Tech and Nano-Bionics, Chinese Academy of Sciences, June 2022 – Present</p>
+            <ul>
+                <li>Optimized ink formulation and printing parameters for large-scale inkjet printing of PDMS microlens arrays.</li>
+                <li>Integrated microfluidic chips with printed microlens arrays for tunable-focus artificial compound eyes.</li>
+                <li>Conducted fluid-structure interaction and ray tracing simulations on artificial compound eyes.</li>
+                <li>Constructed an optical system to perform optical characterization of microlens arrays and compound eyes.</li>
+                <li>Developed a MATLAB program to extract data from compound eye photos and assess their clarity.</li>
+                <li>Data analysis and academic manuscript writing.</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <p>Master of Materials and Chemical Engineering, <a href="https://en.ustc.edu.cn/">University of Science and Technology of China</a>, Expected in June 2024</p>
+            <ul>
+                <li>Thesis: “Inkjet Printing of PDMS-Based Artificial Eyes with Customizable Optical Features.”</li>
+                <li>Awards: Graduate Academic Scholarship 2022, 2023 (Top 5%)</li>
+            </ul>
+            <p>Bachelor of Material Forming and Control Engineering, <a href="https://www.hfut.edu.cn/">Hefei University of Technology</a>, June 2020</p>
+            <ul>
+                <li>Thesis: “Structure Design of Foundry Ladle Transfer Vehicle in Metal Liquid Transfer System.”</li>
+                <li>Awards: National Encouragement Scholarship (Top 5%), Undergraduate Scholarship</li>
+            </ul>
+            <p><a href="cv/cv.pdf">Brief CV</a></p>
+        </section>
+    </div>
+
+</body>
+</html>
