@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,7 @@
             display: flex;
             height: 100vh;
             overflow: hidden;
+            color: #333;
         }
 
         /* 左侧固定栏和背景 */
@@ -41,10 +42,10 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: url('photo/background.webp') no-repeat center center;
+                background: url('photo/bg3.webp') no-repeat center center;
                 background-size: cover;
-                filter: blur(3px); /* 调整虚化 */
-                opacity: 0.7; /* 调整透明度 */
+                filter: blur(3px);
+                opacity: 0.7;
                 z-index: -1;
             }
 
@@ -52,32 +53,53 @@
             width: auto;
             height: 150px;
             margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         #sidebar h1 {
-            font-size: 2em;
+            font-size: 2.2em;
             margin-top: 0;
             color: #fff;
+            text-shadow: 1px 1px 2px #000;
+            margin-bottom: 10px;
         }
 
-        /* 调整文字样式 */
-        #sidebar p, #sidebar a {
-            font-size: 1.1em; /* 增大字体 */
-            color: #f0f0f0; /* 更亮的灰色 */
-            line-height: 1.6; /* 增加行间距 */
+            #sidebar h1::after {
+                content: "";
+                display: block;
+                width: 80%;
+                height: 2px;
+                background-color: rgba(255, 255, 255, 0.5);
+                margin: 10px auto 20px auto;
+            }
+
+        #sidebar p {
+            font-size: 1.1em;
+            color: #FFFFFF;
+            line-height: 1.6;
+            font-weight: normal;
+            text-align: center;
+            text-shadow: 0.5px 0.5px 1px #000;
+            margin-bottom: 15px;
         }
 
         #sidebar a {
             color: #c0d6f3;
+            font-weight: bold;
             text-decoration: none;
         }
+
+            #sidebar a:hover {
+                color: #e0e0ff;
+            }
 
         /* 右侧内容区 */
         #content {
             margin-left: 30%;
             width: 70%;
             overflow-y: auto;
-            padding: 20px;
+            padding: 20px 40px;
             box-sizing: border-box;
             background-color: #f4f4f9;
             height: 100vh;
@@ -85,22 +107,50 @@
 
         h2 {
             color: #333;
+            font-size: 1.5em;
             border-bottom: 2px solid #0066cc;
             padding-bottom: 5px;
             margin-top: 20px;
         }
 
-        a {
+        h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        p, li {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        #content a {
             color: #0066cc;
             text-decoration: none;
         }
+
+            #content a:hover {
+                color: #004499;
+            }
 
         ul, ol {
             padding-left: 20px;
         }
 
-        li {
-            padding: 5px 0;
+        /* 经验部分的样式 */
+        #experience h3 {
+            display: flex;
+            justify-content: space-between;
+            color: #333;
+        }
+
+        #experience .date {
+            font-weight: normal;
+            color: #666;
+            font-size: 1em;
         }
 
         /* 论文条目的样式 */
@@ -111,18 +161,34 @@
         }
 
             .publication-item img {
-                width: 150px; /* 进一步增大缩略图宽度 */
+                width: 160px;
                 height: auto;
                 margin-right: 15px;
-                border-radius: 5px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
 
         .publication-text {
             flex: 1;
-            font-size: 1.1em; /* 增大字体 */
-            line-height: 1.6; /* 增加行间距 */
         }
+
+        /* 技能部分的样式 */
+        #skills h2 {
+            color: #333;
+            font-size: 1.5em;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        #skills h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -131,9 +197,7 @@
     <div id="sidebar">
         <h1>Shiyu Zhou (周诗羽)</h1>
         <img id="profile-pic" src="photo/bio.jpg" alt="Shiyu Zhou">
-        <p>Assistant Student</p>
-        <p>Key Laboratory of Multifunctional Nanomaterials and Smart Systems,<br>Suzhou Institute of Nano-Tech and Nano-Bionics,<br>Chinese Academy of Sciences</p>
-        <p>No.398 Ruoshui Road, Soochow City, China</p>
+        <p>I hold a Master’s in Materials and Chemical Engineering, with experience in inkjet printing, finite element simulation, and semiconductor fabrication processes. My interests include micro- and nano-fabrication, flexible electronics, and wearable technologies.</p>
         <p>Email: <a href="mailto:syzhou2022@gmail.com">syzhou2022@gmail.com</a></p>
     </div>
 
@@ -141,18 +205,9 @@
     <div id="content">
         <section id="about">
             <h2>About Me</h2>
-            <p>I am a master's student majoring in Materials and Chemical Engineering at the University of Science and Technology of China, expected to graduate in June 2024. Currently, I serve as a graduate research assistant at the Key Laboratory of Multifunctional Nanomaterials and Smart Systems at the Chinese Academy of Sciences, focusing on inkjet 3D printing processes. I have a background in 3D Printing, Printable Electronics, and Mechanical Design.</p>
-            <p>My research interests include functional microsystem 3D printing, wearable electronic products, and soft 3D micro-mechanics. I am dedicated to utilizing novel additive manufacturing processes for micro and nanostructures and am enthusiastic about designing, building, and observing new manufacturing processes.</p>
-        </section>
-
-        <section id="research">
-            <h2>Research</h2>
-            <ul>
-                <li>3D Printing of Functional Microsystems</li>
-                <li>New Fabrication Techniques for Micro and Nanostructures</li>
-                <li>Flexible Electronics</li>
-                <li>3D-printed Microoptics</li>
-            </ul>
+            <p>I received my Master’s degree in Materials and Chemical Engineering from the University of Science and Technology of China in June 2024. From 2022 to 2024, I served as a graduate research assistant at the Key Laboratory of Multifunctional Nanomaterials and Smart Systems at the Chinese Academy of Sciences, where I focused on optimizing ink formulation and printing parameters, using finite element simulations to study deformation and optical paths, and developing an image clarity testing system. Currently I work at CXMT semiconductor fab, involved in developing design rules for logic circuits. These experiences have equipped me with expertise in 3D printing, printable electronics, semiconductor devices, and finite element analysis.</p>
+            <p>My research focuses on advancing additive manufacturing through process optimization to enable innovative structures and devices. With an educational background in mechanical engineering, electronics, materials science, and chemical engineering, I am driven to explore interdisciplinary fields such as micro- and nano-manufacturing. I am particularly interested in flexible electronics and wearable technologies, which I see as essential to the future of Human-Machine Interaction (HMI) and health monitoring.</p>
+            <p><a href="cv/cv.pdf">Brief CV</a></p>
         </section>
 
         <section id="publications">
@@ -172,17 +227,31 @@
         </section>
 
         <section id="experience">
-            <h2>Research Experience</h2>
-            <p>Graduate Research Assistant, Key Laboratory of Multifunctional Nanomaterials and Smart Systems, Suzhou Institute of Nano-Tech and Nano-Bionics, Chinese Academy of Sciences, June 2022 – Present</p>
-            <ul>
-                <li>Optimized ink formulation and printing parameters for large-scale inkjet printing of PDMS microlens arrays.</li>
-                <li>Integrated microfluidic chips with printed microlens arrays for tunable-focus artificial compound eyes.</li>
-                <li>Conducted fluid-structure interaction and ray tracing simulations on artificial compound eyes.</li>
-                <li>Constructed an optical system to perform optical characterization of microlens arrays and compound eyes.</li>
-                <li>Developed a MATLAB program to extract data from compound eye photos and assess their clarity.</li>
-                <li>Data analysis and academic manuscript writing.</li>
-            </ul>
+            <h2>Work and Research Experience</h2>
+
+            <div class="position">
+                <h3>Process Integration Engineer <span class="date">July 2024 - Present</span></h3>
+                <p><strong>ChangXin Memory Technologies</strong></p>
+                <ul>
+                    <li>Developed design rules for logic circuits by integrating silicon data and analyzing device performance to provide optimized layout solutions.</li>
+                </ul>
+            </div>
+
+            <div class="position">
+                <h3>Graduate Research Assistant <span class="date">June 2022 – June 2022</span></h3>
+                <p><strong>Key Laboratory of Multifunctional Nanomaterials and Smart Systems, Suzhou Institute of Nano-Tech and Nano-Bionics, Chinese Academy of Sciences</strong></p>
+                <ul>
+                    <li>Optimized ink formulations and printing parameters for large-scale fabrication of PDMS microlens arrays via inkjet printing.</li>
+                    <li>Integrated microfluidic chips with printed microlens arrays to create tunable-focus artificial compound eyes.</li>
+                    <li>Conducted fluid-structure interaction and ray tracing simulations using finite element analysis on compound eye models.</li>
+                    <li>Designed and built an optical characterization system for microlens arrays and compound eyes.</li>
+                    <li>Developed a MATLAB program to process compound eye images and evaluate image clarity.</li>
+                    <li>Performed data analysis and contributed to scientific manuscript preparation.</li>
+                </ul>
+            </div>
         </section>
+
+
 
         <section id="education">
             <h2>Education</h2>
@@ -196,8 +265,32 @@
                 <li>Thesis: “Structure Design of Foundry Ladle Transfer Vehicle in Metal Liquid Transfer System.”</li>
                 <li>Awards: National Encouragement Scholarship (Top 5%), Undergraduate Scholarship</li>
             </ul>
-            <p><a href="cv/cv.pdf">Brief CV</a></p>
+
         </section>
+
+        <section id="skills">
+            <h2>Technical Skills and Expertise</h2>
+
+            <h3>Core Expertise</h3>
+            <ul>
+                <li>3D Printing Techniques: Inkjet 3D Printing, Direct Ink Writing, Micro-Stereolithography, Fused Deposition Modeling</li>
+                <li>Semiconductor Fabrication: Process flow and layout design for device manufacturing</li>
+                <li>Microfabrication: Microfluidics, MEMS fabrication</li>
+            </ul>
+
+            <h3>Technical Software Proficiency</h3>
+            <ul>
+                <li>3D CAD: SolidWorks, Blender, Autodesk Inventor</li>
+                <li>FEA: COMSOL, Ansys Workbench</li>
+                <li>Data Analysis: MATLAB, Origin</li>
+            </ul>
+
+            <h3>Collaboration & Project Skills</h3>
+            <ul>
+                <li>Experienced in both independent research and collaborative projects</li>
+            </ul>
+        </section>
+
     </div>
 
 </body>
